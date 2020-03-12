@@ -26,7 +26,7 @@ class Voyager:
                     sys.exit()
             
             # Redraw the screen during each pass through the loop
-            self.screen.flil(self.settings.bg_color)
+            self.screen.fill(self.settings.bg_color)
             
             # Make the most recently drawn screen visible.
             pygame.display.flip()
