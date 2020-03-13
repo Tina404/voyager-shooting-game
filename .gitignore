@@ -5,3 +5,6 @@ venv/
 
 # VS Code specific files
 .vscode/
+
+# Mac OS meta file
+.DS_Store

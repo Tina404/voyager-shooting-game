@@ -3,6 +3,7 @@ import sys
 import pygame
 
 from settings import Settings
+from ship import Ship
 
 class Voyager:
     """Overall class to manage game assets and behavior."""
@@ -17,6 +18,8 @@ class Voyager:
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Voyager")
 
+        self.ship = Ship(self)
+
     def run_game(self):
         """Start the main loop for the game."""
         while True:
@@ -27,6 +30,8 @@ class Voyager:
             
             # Redraw the screen during each pass through the loop
             self.screen.fill(self.settings.bg_color)
+
+            self.ship.blitme()
             
             # Make the most recently drawn screen visible.
             pygame.display.flip()
