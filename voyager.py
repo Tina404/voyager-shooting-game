@@ -27,12 +27,15 @@ class Voyager:
             self._check_events()
             self.ship.update()
 
-            self.bullets.update()
-            self._remove_bullets_out_of_boudnary()
+            self._update_bullets()
             
             self._update_screen()
 
-    def _remove_bullets_out_of_boudnary(self):
+    def _update_bullets(self):
+        """Update bullets positions and remove old ones."""
+        # update bullets' positions
+        self.bullets.update()
+        
         # remove bullets that are out of boundary
         for bullet in self.bullets.copy():
             if bullet.rect.bottom <= 0:
