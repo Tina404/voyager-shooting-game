@@ -11,10 +11,11 @@ Using Python and PyGame to build a warship shotting game
 
 - Start up the game: `python voyager.py`
 - Control keys: 
-  - <kbd>←</kbd>, <kbd>→</kbd> to move left or right 
-  - <kbd>q</kbd> or <kbd>Q</kbd> or <kbd>esc</kbd> to exit the game
+  - <kbd>←</kbd>, <kbd>→</kbd> to move left or right
+  - <kbd>space</kbd> to shoot a bullet
   - <kbd>f</kbd> or <kbd>F</kbd> to toggle in or out of Full Screen mode
-
+  - <kbd>q</kbd> or <kbd>Q</kbd> or <kbd>esc</kbd> to exit the game
+  
 ## Reference
   
 - [Python Crash Course - Eric Matthes](https://ehmatthes.github.io/pcc/cheatsheets/README.html)
