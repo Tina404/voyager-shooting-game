@@ -42,7 +42,10 @@ class Ship:
         # Update rect object from self.x
         self.rect.x = self.x
 
-        # boundery check        
+        self._check_boundary()
+
+    def _check_boundary(self):
+        """boundery check"""
         if self.rect.right > self.screen_rect.right:
             self.rect.right = self.screen_rect.right
             self.x = self.rect.x
