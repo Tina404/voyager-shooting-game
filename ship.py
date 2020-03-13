@@ -5,8 +5,10 @@ class Ship:
 
     def __init__(self, game):
         """Initialize the ship and set its starting position."""
+        self.settings = game.settings
         self.screen = game.screen
         self.screen_rect = game.screen.get_rect()
+        
         # Load the ship image and get its rect.
         self.image = pygame.image.load('images/voyager.png') # 330 x 240 
         self.image = pygame.transform.scale(self.image, (33, 24))
@@ -19,13 +21,23 @@ class Ship:
         # Start each new ship at the bottom center of the screen.
         self.rect.midbottom = self.screen_rect.midbottom
 
+        # add this position variable because self.rect.x only accept 
+        # integer part of the number assigned to it
+        self.x = float(self.rect.x)
+
+
+
     def blitme(self):
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
 
     def update(self):
         """Update the ship's position based on the movement flag."""
+        # Update the ship's x value, not the rect
         if self.moving_right:
-            self.rect.x += 1
+            self.x += self.settings.ship_speed
         if self.moving_left:
-            self.rect.x -= 1
+            self.x -= self.settings.ship_speed
+        
+        # Update rect object from self.x
+        self.rect.x = self.x
