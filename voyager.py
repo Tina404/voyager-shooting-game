@@ -14,8 +14,7 @@ class Voyager:
         
         self.settings = Settings()
 
-        self.screen = pygame.display.set_mode(
-            (self.settings.screen_width, self.settings.screen_height))
+        self._set_up_screen()
         pygame.display.set_caption("Voyager")
 
         self.ship = Ship(self)
@@ -47,9 +46,18 @@ class Voyager:
         elif event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
             sys.exit()
         elif event.key == pygame.K_f:
+            self.settings.full_screen_mode = self.settings.full_screen_mode == False
+            self._set_up_screen()
+    
+    def _set_up_screen(self):
+        """Set up the game canvas screen, full screen or not depending on the setting"""
+        if self.settings.full_screen_mode:
             self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
             self.settings.screen_width = self.screen.get_rect().width
             self.settings.screen_height = self.screen.get_rect().height
+        else:
+            self.screen = pygame.display.set_mode(
+        (self.settings.screen_width, self.settings.screen_height))
     
     def _check_keyup_events(self, event):
         """Respond to keyup events"""
