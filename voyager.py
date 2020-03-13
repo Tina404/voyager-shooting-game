@@ -26,15 +26,18 @@ class Voyager:
         while True:
             self._check_events()
             self.ship.update()
-            self.bullets.update()
 
-            # remove bullets that are out of boundary
-            for bullet in self.bullets.copy():
-                if bullet.rect.bottom <= 0:
-                    self.bullets.remove(bullet)
-            # print(len(self.bullets))
+            self.bullets.update()
+            self._remove_bullets_out_of_boudnary()
             
             self._update_screen()
+
+    def _remove_bullets_out_of_boudnary(self):
+        # remove bullets that are out of boundary
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
+        # print(len(self.bullets))
 
     def _check_events(self):
         """Respond to keypresses and mouse events"""
