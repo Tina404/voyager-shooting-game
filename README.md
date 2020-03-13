@@ -14,3 +14,9 @@ Using Python and PyGame to build a warship shotting game
   - <kbd>←</kbd>, <kbd>→</kbd> to move left or right 
   - <kbd>q</kbd> or <kbd>Q</kbd> or <kbd>esc</kbd> to exit the game
   - <kbd>f</kbd> or <kbd>F</kbd> to toggle in or out of Full Screen mode
+
+## Reference
+  
+- [Python Crash Course - Eric Matthes](https://ehmatthes.github.io/pcc/cheatsheets/README.html)
+- [PyGame Documentation](https://www.pygame.org/docs/)
+  
