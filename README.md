@@ -10,3 +10,7 @@ Using Python and PyGame to build a warship shotting game
 4. install PyGame: `pip install pygame`
 
 - Start up the game: `python voyager.py`
+- Control keys: 
+  - <kbd>←</kbd>, <kbd>→</kbd> to move left or right 
+  - <kbd>q</kbd> or <kbd>Q</kbd> or <kbd>esc</kbd> to exit the game
+
