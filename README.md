@@ -24,6 +24,6 @@ Using Python and PyGame to build a warship shotting game
   
 ## Reference
   
-- [Python Crash Course - Eric Matthes](https://ehmatthes.github.io/pcc/cheatsheets/README.html)
+- [Python Crash Course - Eric Matthes](https://ehmatthes.github.io/pcc_2e/)
 - [PyGame Documentation](https://www.pygame.org/docs/)
   
