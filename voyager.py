@@ -92,6 +92,9 @@ class Voyager:
         """Start a new game when the player clicks Play."""
         play_button_clicked = self.play_button.rect.collidepoint(mouse_pos)
         if play_button_clicked and not self.stats.game_active:
+            # hide the mouse cursor
+            pygame.mouse.set_visible(False)
+
             # Reset the game status
             self.stats.reset_stats()
             self.stats.game_active = True
@@ -220,6 +223,7 @@ class Voyager:
             sleep(0.5)
         else:
             print("Game Over!")
+            pygame.mouse.set_visible(True)
             self.stats.game_active = False
     
     def _check_aliens_bottom(self):
