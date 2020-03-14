@@ -77,6 +77,7 @@ class Voyager:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
         
         # If no more aliens, destroy existing bullets & create a new fleet
         if not self.aliens:
