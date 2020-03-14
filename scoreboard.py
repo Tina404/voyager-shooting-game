@@ -18,7 +18,12 @@ class Scoreboard:
     
     def prep_score(self):
         """Turn the score into a rendered image."""
-        score_str = str(self.stats.score)
+        
+        # round the scores to 10th, e.g. 12345 -> 12340
+        rounded_score = round(self.stats.score, -1)
+        # format the scores in groups, e.g. 12340 -> 12,340
+        score_str = "{:,}".format(rounded_score)
+        
         self.score_image = self.font.render(score_str, True,
             self.text_color, self.settings.bg_color)
         
