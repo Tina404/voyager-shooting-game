@@ -5,6 +5,7 @@ import pygame
 
 from settings import Settings
 from game_stats import GameStats
+from button import Button
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
@@ -30,8 +31,11 @@ class Voyager:
 
         self._create_fleet()
         
-        # Start Alien Invasion in an active state.
-        self.stats.game_active = True
+        # Start Alien Invasion in an inactive state.
+        self.stats.game_active = False
+
+        # Make a Play button
+        self.play_button = Button(self, "Play")
 
     def run_game(self):
         """Start the main loop for the game."""
@@ -80,7 +84,25 @@ class Voyager:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
                 self._check_keyup_events(event)
-            
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                self._check_play_button(mouse_pos)
+    
+    def _check_play_button(self, mouse_pos):
+        """Start a new game when the player clicks Play."""
+        if self.play_button.rect.collidepoint(mouse_pos):
+            # Reset the game status
+            self.stats.reset_stats()
+            self.stats.game_active = True
+
+            # get rid of any remaining aliens and bullets
+            self.aliens.empty()
+            self.bullets.empty()
+
+            # create a new fleet and center the ship
+            self._create_fleet()
+            self.ship.center_ship()
+
     def _check_keydown_events(self, event):
         """Respond to keydown events"""
         if event.key == pygame.K_RIGHT:
@@ -157,6 +179,10 @@ class Voyager:
             bullet.draw_bullet()
         
         self.aliens.draw(self.screen)
+
+        # Draw the play button if the game is inactive.
+        if not self.stats.game_active:
+            self.play_button.draw_button()
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
