@@ -37,6 +37,8 @@ class Voyager:
         # Make a Play button
         self.play_button = Button(self, "Play")
 
+        self.settings.initialize_dynamic_settings()
+
     def run_game(self):
         """Start the main loop for the game."""
         while True:
@@ -73,6 +75,7 @@ class Voyager:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _check_events(self):
         """Respond to keypresses and mouse events"""
@@ -94,6 +97,9 @@ class Voyager:
         if play_button_clicked and not self.stats.game_active:
             # hide the mouse cursor
             pygame.mouse.set_visible(False)
+
+            # reset the game settings
+            self.settings.initialize_dynamic_settings()
 
             # Reset the game status
             self.stats.reset_stats()
