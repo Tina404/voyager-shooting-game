@@ -19,5 +19,7 @@ class Settings:
         self.bullet_color = (60, 60, 60)
 
         # alien settings
+        self.fleet_drop_speed = 10
         self.alien_speed = 1.0
+        self.fleet_direction = 1 # 1 for moving right, -1 for moving left
         
