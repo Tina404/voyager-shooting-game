@@ -224,7 +224,6 @@ class Voyager:
         self.aliens.update()
 
         if pygame.sprite.spritecollideany(self.ship, self.aliens):
-            print("Ship hit!!!")
             self._ship_hit()
         
         # Look for aliens hitting the bottom of the screen.
@@ -246,7 +245,7 @@ class Voyager:
             # Pause.
             sleep(0.5)
         else:
-            print("Game Over!")
+            # print("Game Over!")
             pygame.mouse.set_visible(True)
             self.stats.game_active = False
     
@@ -256,7 +255,6 @@ class Voyager:
         for alien in self.aliens.sprites():
             if alien.rect.bottom >= screen_rect.bottom:
                 # Treat this the same as if the ship got hit.
-                print('Aliens Arrived!')
                 self._ship_hit()
                 break
 
