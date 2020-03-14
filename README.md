@@ -2,6 +2,12 @@
 
 Using Python and PyGame to build a warship shotting game
 
+## Game Play Screenshots
+
+![Game UI Screenshots - 1 - Play](/images/demo/game-play-0.png)
+![Game UI Screenshots - 2 - Game Over](/images/demo/game-play-1.png)
+![Game UI Screenshots - 3 - Show Highest Score vs Current Score](/images/demo/game-play-2.png)
+
 ## Steps
 
 1. ensure python 3 is installed
