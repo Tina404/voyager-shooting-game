@@ -32,6 +32,7 @@ class Voyager:
             self.ship.update()
 
             self._update_bullets()
+            self._update_aliens()
             
             self._update_screen()
 
@@ -136,6 +137,10 @@ class Voyager:
 
         # Make the most recently drawn screen visible.
         pygame.display.flip()
+
+    def _update_aliens(self):
+        """Update the positions of all aliens in the fleet"""
+        self.aliens.update()
 
     
 if __name__ == '__main__':
