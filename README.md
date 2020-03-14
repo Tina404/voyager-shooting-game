@@ -11,9 +11,9 @@ Using Python and PyGame to build a warship shotting game
 ## Steps
 
 1. ensure python 3 is installed
-2. create virtual environment (venv): `python -m venv venv`
+2. go to this project root directory, create virtual environment (venv): `python -m venv venv`
 3. activate the venv: `source venv/bin/activate`
-4. install PyGame: `pip install pygame`
+4. install PyGame: `pip install pygame`, or run `pip install -r requirements.txt`
 
 - Start up the game: `python voyager.py`
 - Control keys: 
